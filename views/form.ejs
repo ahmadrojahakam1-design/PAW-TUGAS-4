@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title><%= judul %></title>
+</head>
+<body>
+
+    <h1><%= judul %></h1>
+
+    <form action="<%= aksi %>" method="post">
+        NIM: <input type="text" name="nim" value="<%= mhs.nim %>" required><br><br>
+        Nama: <input type="text" name="nama" value="<%= mhs.nama %>" required><br><br>
+        Jurusan: <input type="text" name="jurusan" value="<%= mhs.jurusan %>" required><br><br>
+        <button type="submit">Simpan</button>
+        <a href="/">Batal</a>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Mahasiswa</title>
+</head>
+<body>
+
+    <h1>Data Mahasiswa</h1>
+    <a href="/tambah">+ Tambah Data</a>
+    <br><br>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Jurusan</th>
+            <th>Aksi</th>
+        </tr>
+
+        <% if (data.length === 0) { %>
+            <tr>
+                <td colspan="5">Belum ada data</td>
+            </tr>
+        <% } %>
+
+        <% data.forEach((m, i) => { %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= m.nim %></td>
+                <td><%= m.nama %></td>
+                <td><%= m.jurusan %></td>
+                <td>
+                    <a href="/edit/<%= m.id %>">Edit</a>
+                    <form action="/hapus/<%= m.id %>" method="post" style="display:inline"
+                          onsubmit="return confirm('Hapus data ini?')">
+                        <button type="submit">Hapus</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>
